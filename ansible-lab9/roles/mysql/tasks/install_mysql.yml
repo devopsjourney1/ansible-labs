@@ -1,0 +1,13 @@
+- name: Ensure mysql-server is installed latest version
+  apt: name=mysql-server state=latest
+  tags: installation
+
+- name: Installing python module PyMySQL which is required to for MySQL setup
+  pip:
+    name: PyMySQL
+  tags: setup
+
+- name: Ensure mysql-server is running
+  service:
+    name: mysql
+    state: started
