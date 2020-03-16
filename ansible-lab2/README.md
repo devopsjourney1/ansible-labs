@@ -15,3 +15,5 @@ ansible database -i hosts -m service -a "name=mysql state=started"
 ansible database --become -i hosts -m service -a "name=mysql state=restarted"
 ansible web -i hosts --become -a "reboot --reboot"
  ```
+
+ ansible all -i hosts --become -m apt -a "update_cache=yes"
