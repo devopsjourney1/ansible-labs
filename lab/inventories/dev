@@ -15,3 +15,6 @@ db01
 proxy 
 webservers 
 database
+
+[all:vars]
+myenvironment=development

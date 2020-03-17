@@ -2,7 +2,7 @@
 
 We've learned a lot so far. Let's see if we can add the mysql role and get a database up and running.
 
-## Gather ansible facts, these are dynamic variables automatically gathered by ansible
+## Setup mysql-server on the Database Server
 1. Add python-pip to common installation items.
 2. Create mysql role using ansible-galaxy.
 3. Create tasks and handlers for new mysql role.
