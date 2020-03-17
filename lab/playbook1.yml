@@ -6,10 +6,13 @@
     html_welcome_msg: "Hello world!"
   roles:
     - apache2
-    - common 
+    - common
+  tags:
+    web 
 
 - hosts: proxy
   become: yes
   roles:
     - common
     - nginx
+  tags: proxy

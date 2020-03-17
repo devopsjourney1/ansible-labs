@@ -7,12 +7,12 @@ Tags allow you to categorize items in your playbooks and tasks.
 3. Use --list-tags again to see the now enabled tags, and see tag inheritance.
 4. Run your playbooks using tags to only run certain items
 
-## Check current tags
+## Check Current Tags
 ``` shell
 ansible-playbook -i hosts -K playbook1.yml --list-tags
 ``` 
 
-## Run playbook for specific tags
+## Run Playbook for Specific Tags
 ``` shell
 ansible-playbook -i hosts -K playbook1.yml --tags configuration
 ansible-playbook -i hosts -K playbook1.yml --tags proxy

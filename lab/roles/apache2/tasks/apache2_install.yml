@@ -2,6 +2,7 @@
   apt:
     name: apache2
     state: latest
+  tags: installation
 
 - name: write the apache2 ports.conf config file
   template:
@@ -9,6 +10,7 @@
     dest: /etc/apache2/ports.conf
   notify:
   - restart apache
+  tags: configuration
 
 - name: write the index file
   template:
@@ -16,6 +18,7 @@
     dest: /var/www/html/index.html
   notify:
   - restart apache
+  tags: configuration
 
 - name: ensure apache is running
   service:
