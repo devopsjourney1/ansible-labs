@@ -2,14 +2,18 @@
 
 Tags allow you to categorize items in your playbooks and tasks.  
 
-## Change Playbook so it uses the Role functionality to setup apache2
 1. Use --list-tags to see the current tags enabled.
 2. Start adding tags to your playbooks and tasks. Make use of the 'always' keyword for common task of copying hostfile
-3. Use --list-tags to see the now enabled tags, and see tag inheritance.
+3. Use --list-tags again to see the now enabled tags, and see tag inheritance.
 4. Run your playbooks using tags to only run certain items
 
+## Check current tags
 ``` shell
 ansible-playbook -i hosts -K playbook1.yml --list-tags
+``` 
+
+## Run playbook for specific tags
+``` shell
 ansible-playbook -i hosts -K playbook1.yml --tags configuration
 ansible-playbook -i hosts -K playbook1.yml --tags proxy
 ```

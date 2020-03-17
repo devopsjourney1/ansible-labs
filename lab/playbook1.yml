@@ -4,8 +4,12 @@
     http_port: 8000
     https_port: 4443
     html_welcome_msg: "Hello world!"
-  tasks:
-  - import_tasks: tasks/apache2_install.yml
+  roles:
+    - apache2
+    - common 
 
-  handlers:
-    - import_tasks: handlers/main.yml
+- hosts: proxy
+  become: yes
+  roles:
+    - common
+    - nginx
