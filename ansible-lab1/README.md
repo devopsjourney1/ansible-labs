@@ -15,7 +15,6 @@
  vagrant ssh ansible-control
 ```
 
-
 ### Copy hosts file on ansible-control
 ``` shell
 cp /vagrant/hosts_file /etc/hosts 
@@ -26,11 +25,16 @@ cp /vagrant/hosts_file /etc/hosts
  sudo apt-get install ansible
 ```
 
-### Install Ansible
+### Create a SSH key and copy to all servers
 ``` shell
 ssh-keygen
 ssh-copy-id localhost
 ssh-copy-id web01 && ssh-copy-id web02 && ssh-copy-id loadbalancer && ssh-copy-id db01
+```
+
+### Install python-simplejson
+``` shell
+ansible webstack -i hosts -m command -a hostname
 ```
 
 ### Install python-simplejson
