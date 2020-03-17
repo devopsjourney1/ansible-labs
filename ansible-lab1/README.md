@@ -6,7 +6,7 @@
 4. Create an inventory file named hosts
 5. Test out a command
 6. Generate SSH Keys and copy to hosts
-7. Test running commands to all hosts
+7. Test running ad-hoc commands to all hosts
 8. Install python-simplejson module. This allows clients to be fully managed.
 
 ### Setup Vagrant and connect to ansible-control server
@@ -32,7 +32,7 @@ ssh-copy-id localhost
 ssh-copy-id web01 && ssh-copy-id web02 && ssh-copy-id loadbalancer && ssh-copy-id db01
 ```
 
-### Install python-simplejson
+### Run a ad-hoc command to the webstack group
 ``` shell
 ansible webstack -i hosts -m command -a hostname
 ```
