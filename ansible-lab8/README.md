@@ -1,4 +1,4 @@
-# Ansible Lab 6 - Create a Developement/Production inventory file
+# Ansible Lab 8 - Create a Developement/Production inventory file
 
 You can have multiple sets of inventories. Let's create a production and developement inventory file and set a variable for them.
 

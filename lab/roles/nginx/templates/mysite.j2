@@ -1,6 +1,10 @@
+#Dynamic Config for server {{ ansible_facts['nodename'] }}
     upstream webservers {
-        server 192.168.56.102:8000;
-        server 192.168.56.103:8000;
+
+        {%  for host in groups['webservers'] %} 
+           server {{ hostvars[host]['ansible_facts']['nodename']}}:{{ http_port }};
+        {%  endfor %} 
+
     }
 
     server {
