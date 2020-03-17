@@ -1,12 +1,13 @@
 # Ansible Lab 1 - Installation and Inventory file basics
 
-1. Copy /vagrant/hosts_file to /etc/hosts 
-2. Install ansible
-3. Create an inventory file named hosts
-4. Test out a command
-5. Generate SSH Keys and copy to hosts
-6. Test running commands to all hosts
-7. Install python-simplejson module. This allows clients to be fully managed.
+1. Create VMs using vagrant and ssh to our control server
+2. Copy /vagrant/hosts_file to /etc/hosts 
+3. Install ansible
+4. Create an inventory file named hosts
+5. Test out a command
+6. Generate SSH Keys and copy to hosts
+7. Test running commands to all hosts
+8. Install python-simplejson module. This allows clients to be fully managed.
 
 ### Setup Vagrant and connect to ansible-control server
 ``` shell
