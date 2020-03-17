@@ -1,4 +1,4 @@
-# Ansible Lab 1 - Inventory file basics
+# Ansible Lab 1 - Installation and Inventory file basics
 
 1. Copy /vagrant/hosts_file to /etc/hosts 
 2. Install ansible
