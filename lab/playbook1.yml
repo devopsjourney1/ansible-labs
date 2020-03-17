@@ -5,34 +5,7 @@
     https_port: 4443
     html_welcome_msg: "Hello world!"
   tasks:
-
-  - name: ensure apache is the latest version
-    apt:
-      name: apache2
-      state: latest
-
-  - name: write the apache2 ports.conf config file
-    template:
-      src: templates/ports.conf.j2
-      dest: /etc/apache2/ports.conf
-    notify:
-    - restart apache
-
-  - name: write the index file
-    template:
-      src: templates/index.html.j2
-      dest: /var/www/html/index.html
-    notify:
-    - restart apache
-
-
-  - name: ensure apache is running
-    service:
-      name: apache2
-      state: started
+  - import_tasks: tasks/apache2_install.yml
 
   handlers:
-    - name: restart apache
-      service:
-        name: apache2
-        state: restarted
+    - import_tasks: handlers/main.yml
