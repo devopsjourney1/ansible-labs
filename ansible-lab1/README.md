@@ -1,21 +1,38 @@
 # Ansible Lab 1 - Inventory file basics
 
-1. Create an inventory file named.
-2. Test out a command
-3. Generate SSH Keys and copy to hosts
-4. Test running commands to all hosts
-5. Install python-simplejson module. This allows clients to be fully managed.
+1. Copy /vagrant/hosts_file to /etc/hosts 
+2. Install ansible
+3. Create an inventory file named hosts
+4. Test out a command
+5. Generate SSH Keys and copy to hosts
+6. Test running commands to all hosts
+7. Install python-simplejson module. This allows clients to be fully managed.
 
+### Setup Vagrant and connect to ansible-control server
 ``` shell
- ansible control -i hosts -m command -a hostname
- ssh-keygen
- ssh-copy-id localhost
- ansible control -i hosts -m command -a hostname
- ssh-copy-id web01 && ssh-copy-id web02 && ssh-copy-id db01 && ssh-copy-id loadbalancer 
- ansible all -i hosts -m command -a date
- ansible all -i hosts -m command -a 'sudo apt-get -y install python-simplejson'
- sudo vi /etc/ansible/ansible.cfg
- /deprecation <to search for it, then remove the warning>
- ansible all -i hosts -m command -a date
- ansible all -i hosts -m command -a 'sudo apt-get -y install python-simplejson'
- ```
+ vagrant up
+ vagrant ssh ansible-control
+```
+
+
+### Copy hosts file on ansible-control
+``` shell
+cp /vagrant/hosts_file /etc/hosts 
+```
+
+### Install Ansible
+``` shell
+ sudo apt-get install ansible
+```
+
+### Install Ansible
+``` shell
+ssh-keygen
+ssh-copy-id localhost
+ssh-copy-id web01 && ssh-copy-id web02 && ssh-copy-id loadbalancer && ssh-copy-id db01
+```
+
+### Install python-simplejson
+``` shell
+ansible all -i hosts -m command -a 'sudo apt-get -y install python-simplejson'
+```
