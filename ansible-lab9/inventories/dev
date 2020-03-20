@@ -1,7 +1,6 @@
 [control]
 ansible-control
 
-
 [proxy] 
 loadbalancer
 

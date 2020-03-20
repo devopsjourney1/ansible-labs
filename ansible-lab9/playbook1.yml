@@ -13,11 +13,3 @@
     - nginx
   tags: 
     proxy
-
-- hosts: database
-  become: yes
-  roles:
-    - common
-    - mysql
-  tags: 
-    database
