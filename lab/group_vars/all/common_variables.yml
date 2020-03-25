@@ -1,7 +1,0 @@
-http_port: 8000
-https_port: 4443
-html_welcome_msg: "Hello world!"
-
-ntp_server: default-time.example.com
-dns_server_primary: 8.8.8.8
-dns_server_secondary: 8.8.4.4

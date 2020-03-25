@@ -43,11 +43,7 @@ Vagrant.configure("2") do |config|
       node.vm.network "forwarded_port", guest: 22, host: machine[:ssh_port], id: "ssh"
 
       node.vm.provider :virtualbox do |v|
-        if machine[:hostname] == "ansible-control"
-          v.customize ["modifyvm", :id, "--memory", 4096]
-        else
-          v.customize ["modifyvm", :id, "--memory", 512]
-        end
+        v.customize ["modifyvm", :id, "--memory", 512]
         v.customize ["modifyvm", :id, "--name", machine[:hostname]]
       end
     end
