@@ -8,7 +8,7 @@ ansible-galaxy allows you to download roles and also provides an excellent defau
 3. Run playbook
 
 
-### Create Apache2 Role
+### Create Apache2 Role, move tasks/handlers/templates to new roles/apache2 structure. Run playbook.
 ``` shell
 ansible-galaxy init roles/apache2
 ansible-playbook -i hosts -K playbook1.yml

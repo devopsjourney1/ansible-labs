@@ -17,4 +17,4 @@ webservers
 database
 
 [all:vars]
-myenvironment=development
+myenvironment=production

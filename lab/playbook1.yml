@@ -11,7 +11,7 @@
   roles:
     - common
     - nginx
-  tags: 
+  tags:
     proxy
 
 - hosts: database

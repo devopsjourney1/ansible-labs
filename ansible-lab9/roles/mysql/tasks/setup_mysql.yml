@@ -1,3 +1,17 @@
 - name: Create my.cnf configuration file
   template: src=templates/my.cnf.j2 dest=/etc/mysql/conf.d/mysql.cnf
   notify: restart mysql
+
+- name: Create database user with name 'bob' and password '12345' with all database privileges
+  mysql_user:
+    name: brad
+    password: 12345
+    priv: '*.*:ALL'
+    state: present
+  tags: mysqldb
+
+- name: Create a new database with name 'devops_journey'
+  mysql_db:
+    name: devops_journey
+    state: present
+  tags: mysqldb

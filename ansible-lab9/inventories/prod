@@ -1,20 +1,19 @@
 [control]
 ansible-control
 
-
-[proxy] 
+[proxy]
 loadbalancer
 
-[webservers] 
+[webservers]
 web01
 web02
 
-[database] 
+[database]
 db01
 
-[webstack:children] 
-proxy 
-web 
+[webstack:children]
+proxy
+webservers
 database
 
 [all:vars]
